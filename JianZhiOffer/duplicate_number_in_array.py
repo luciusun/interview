@@ -30,3 +30,39 @@ class Solution:
             return False
 
         return True
+
+
+    def duplicate1(self, numbers, duplication):
+        d = dict()
+        for i in numbers:
+            # if not d.has_key('i'):
+            if i not in d:
+                d[i] = 1
+
+            else:
+                d[i] += 1
+                duplication.append(i)
+
+
+        # return d, duplication
+        if len(duplication) != 0:
+
+            return duplication[0]
+        else:
+            return False
+
+
+
+# a = Solution()
+# print(a.duplicate1([2,3,1,0,2,5,3], [])
+
+a = [2,3,1,0,2,5,3]
+d = dict()
+for key in a:
+    d[key] = d.get(key, 0) + 1
+
+for j in d:
+    if d[j] > 1:
+        print(j)
+
+print(d)
