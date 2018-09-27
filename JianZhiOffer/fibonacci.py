@@ -8,37 +8,6 @@ document note:
 __author__ = 'slucius'
 
 
-
-#
-
-#def fibonacci(n):
-#     if (n == 0):
-#         return 0
-#     if (n == 1):
-#         return 1
-#     return fibonacci(n - 1) + fibonacci(n - 2)
-#
-#
-#
-# for i in range(10):
-#
-#     print(fibonacci(i))
-#
-#
-# class Solution(object):
-#     def fib(self, n):
-#         if(n==0):
-#             return 0
-#         if(n==1):
-#             return 1
-#         return self.fib(n-1)+self.fib(n-2)
-#
-# s=Solution()
-# print(s.fib(3))
-
-
-
-
 def fibonacci1(n):
     temp = [0, 1]
     if (n < 2):
@@ -53,11 +22,6 @@ def fibonacci1(n):
         i = i + 1
     return fibN
 
-for i in range(10):
-
-    print(fibonacci1(i))
-
-print('................................')
 
 
 def fibonacci2(n):
@@ -68,15 +32,22 @@ def fibonacci2(n):
         return temp[n%2]
 
 for i in range(10):
-
     print(fibonacci2(i))
 
 
 
 
-def jump(n):
-    temp = [1, 2]
-    if(n>=3):
-        for i in range(3, n+1):
-            temp[(i+1)%2] = temp[0] + temp[1]
-        return temp[(n+1)%2]
+#打印前十项
+def fn(n):
+    if n == 1:
+        return 1
+    if n == 2:
+        return 1
+    result = [1, 1]
+    while n > 2:
+        tmp = result[-1] + result[-2]
+        result.append(tmp)
+        n -= 1
+    return result
+
+print(fn(10))
