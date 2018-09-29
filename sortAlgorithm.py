@@ -72,8 +72,29 @@ def merge(left, right):
     result += right[j:]
     return result
 
-alist = [2, 9, 10, 4, 3, 6]
-print(mergeSort(alist))
+# alist = [2, 9, 10, 4, 3, 6]
+# print(mergeSort(alist))
 
 
+def insertSort(alist):
+    if len(alist) < 2:
+        return alist
+
+    i = 1
+    while i < len(alist):
+        itemToInsert = alist[i]
+        j = i - 1
+        while j >= 0:
+            if alist[j] > itemToInsert:
+                alist[j+1] = alist[j]
+                j = j - 1
+            else:
+                break
+        alist[j+1] = itemToInsert
+        i += 1
+
+
+alist = [2, 9, 10, 4, 3, 6,7,100,50,26]
+insertSort(alist)
+print(alist)
 
