@@ -17,7 +17,7 @@ graph = {
     'F': set(['C', 'E'])
     }
 
-# print(graph)
+print(graph)
 
 
 def dfs1(graph, start):
@@ -36,7 +36,7 @@ def dfs1(graph, start):
             stack.extend(graph[vertex] - visited)
     return visited
 
-# print(dfs(graph, 'A'))
+print(dfs1(graph, 'A'))
 
 
 # def dfs2(graph, start, visited = None):
@@ -156,12 +156,12 @@ class Graph(object):
 
 
 
-nodes = [i+1 for i in range(8)]
-
-sides = [(1, 2),(1, 3),(2, 4),(2, 5),(4, 8),(5, 8),(3, 6),(3, 7),(6, 7)]
-
-G = Graph(nodes, sides)
-
-print(G.dfs(2))
-print(G.dfs2(2))
-# print(G.sequence)
+# nodes = [i+1 for i in range(8)]
+#
+# sides = [(1, 2),(1, 3),(2, 4),(2, 5),(4, 8),(5, 8),(3, 6),(3, 7),(6, 7)]
+#
+# G = Graph(nodes, sides)
+#
+# print(G.dfs(2))
+# print(G.dfs2(2))
+# # print(G.sequence)
